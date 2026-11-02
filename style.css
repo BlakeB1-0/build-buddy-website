@@ -1,0 +1,113 @@
+/* Build Buddy | CIS 300 — shared external stylesheet */
+:root { --green:#344b2d; --ink:#172016; --cream:#f5f2ec; --paper:#faf9f6; }
+* { box-sizing:border-box; }
+body { margin:0; background:#e8e4dc; color:#161916; font-family:Arial,Helvetica,sans-serif; }
+a { color:inherit; }
+.site-shell { max-width:1500px; margin:18px auto; background:var(--paper); border:1px solid #ddd8cf; border-radius:8px; box-shadow:0 12px 45px #39322520; overflow:hidden; }
+.site-header { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:12px 3.5%; background:linear-gradient(110deg,#f9f8f5,#eeece6); position:relative; z-index:5; }
+.brand-area { display:flex; align-items:center; gap:42px; }
+.brand { display:flex; align-items:center; gap:6px; text-decoration:none; font-weight:800; font-size:clamp(25px,3.1vw,43px); white-space:nowrap; letter-spacing:-1.5px; color:#0e1d0d; }
+.roof-icon { width:43px; height:43px; fill:none; stroke:#0e1d0d; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+.roof-icon .windows,.big-logo .windows { fill:#0e1d0d; stroke:none; }
+.menu-wrap { position:relative; }
+.menu-wrap summary { width:36px; height:32px; cursor:pointer; display:flex; flex-direction:column; justify-content:space-around; list-style:none; }
+.menu-wrap summary::-webkit-details-marker { display:none; }
+.menu-wrap summary span { display:block; height:3px; width:30px; background:#152014; border-radius:3px; }
+.menu-panel { position:absolute; top:45px; left:0; width:190px; background:white; border:1px solid #ddd; border-radius:8px; box-shadow:0 8px 20px #0002; padding:10px; }
+.menu-panel a { display:block; text-decoration:none; padding:10px; border-radius:5px; }
+.menu-panel a:hover { background:#f0eee8; }
+.main-nav { display:flex; align-items:center; justify-content:flex-end; gap:clamp(16px,3vw,48px); }
+.main-nav a { font-size:14px; text-decoration:none; white-space:nowrap; padding:8px 0; }
+.main-nav a:hover,.main-nav a.active { text-decoration:underline; text-decoration-color:var(--green); text-underline-offset:8px; }
+.main-nav .nav-cta { background:var(--green); color:white; border-radius:10px; padding:14px 28px; font-weight:700; text-decoration:none; }
+.main-nav .nav-cta:hover { background:#263a22; text-decoration:none; }
+.hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,330px) minmax(0,1fr); gap:0; position:relative; align-items:start; padding:0 0 10px; }
+.photo-column { min-width:0; display:flex; flex-direction:column; align-items:center; }
+.photo-box { width:100%; height:400px; position:relative; overflow:hidden; background:#d8d1c6; }
+.photo-box img { display:block; width:100%; height:100%; object-fit:cover; }
+.photo-label { position:absolute; top:42px; left:30px; background:#282720ed; color:white; font-weight:700; font-size:16px; padding:8px 24px; border-radius:40px; }
+.after-column .photo-label { left:auto; right:30px; }
+.store-row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:100px; padding:0 10px; }
+.store-badge { min-width:136px; height:48px; display:flex; align-items:center; gap:8px; padding:6px 11px; border-radius:7px; background:#050505; color:#fff; text-decoration:none; }
+.store-badge small { display:block; font-size:9px; line-height:1.2; }
+.store-badge strong { display:block; font-size:17px; line-height:1.1; }
+.apple-mark { font-size:27px; }
+.play-mark { font-size:25px; color:#73d5af; }
+.big-logo { margin-top:26px; display:flex; flex-direction:column; align-items:center; color:#10200f; line-height:.95; }
+.big-logo svg { width:145px; height:84px; fill:none; stroke:#10200f; stroke-width:7; stroke-linecap:round; stroke-linejoin:round; }
+.big-logo strong { font-size:86px; letter-spacing:-6px; }
+.big-logo b { font-size:26px; letter-spacing:-1px; }
+.phone { position:relative; z-index:2; width:100%; height:560px; margin-top:-3px; padding:36px 15px 22px; border:9px solid #151515; border-radius:53px; background:#f9f8f4; box-shadow:0 0 0 2px #999, 0 10px 24px #0004, inset 0 0 0 2px #888; overflow:hidden; }
+.phone-notch { position:absolute; top:0; left:26%; width:48%; height:24px; background:#111; border-radius:0 0 16px 16px; }
+.phone-status { position:absolute; top:13px; left:30px; right:23px; font-size:11px; font-weight:700; display:flex; justify-content:space-between; }
+.phone-heading { text-align:center; font-size:22px; font-weight:800; margin:0 0 10px; }
+.phone-heading span { color:var(--green); }
+.phone-preview { height:90px; overflow:hidden; border-radius:14px; }
+.phone-preview img { width:100%; height:100%; object-fit:cover; }
+.phone-features { display:flex; flex-direction:column; gap:7px; margin-top:-5px; position:relative; }
+.feature { background:#f7f6f2f5; min-height:67px; border-radius:13px; box-shadow:0 2px 10px #0002; display:flex; align-items:center; gap:12px; padding:8px 12px; }
+.feature-icon { width:39px; height:39px; flex:0 0 39px; border-radius:50%; background:var(--green); color:white; display:grid; place-items:center; font-size:21px; }
+.feature div { flex:1; min-width:0; }
+.feature strong { display:block; font-size:12px; }
+.feature small { display:block; font-size:10px; color:#686868; margin-top:3px; line-height:1.2; }
+.arrow { font-size:24px; font-weight:300; }
+.home-indicator { position:absolute; width:33%; height:4px; background:#161616; border-radius:4px; bottom:9px; left:33.5%; }
+.intro { max-width:790px; padding:30px 24px 40px; margin:0 auto; text-align:center; line-height:1.6; }
+.intro h2 { font-size:29px; margin:0 0 8px; color:var(--ink); }
+.intro p { color:#50564c; margin:0 0 16px; }
+.learn-link { color:var(--green); font-weight:700; text-underline-offset:4px; }
+footer { padding:18px; text-align:center; border-top:1px solid #e5e0d6; color:#6b6b66; font-size:12px; }
+footer p { margin:0; }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+@media (max-width:1050px) { .brand-area { gap:15px; } .main-nav { gap:15px; } .main-nav a { font-size:12px; } .hero { grid-template-columns:minmax(0,1fr) minmax(240px,300px) minmax(0,1fr); } .photo-box { height:340px; } .store-badge { min-width:112px; } .store-badge strong { font-size:14px; } }
+@media (max-width:760px) { .site-shell { margin:0; border-radius:0; } .site-header { flex-wrap:wrap; } .main-nav { width:100%; justify-content:center; flex-wrap:wrap; } .hero { grid-template-columns:1fr 1fr; gap:0; } .phone { grid-column:1/-1; grid-row:1; width:min(330px,90%); justify-self:center; } .photo-box { height:270px; } .store-row { margin-top:20px; } .big-logo { margin-top:18px; } }
+@media (max-width:480px) { .brand { font-size:28px; } .roof-icon { width:30px; } .main-nav { gap:10px; } .main-nav a { font-size:11px; } .main-nav .nav-cta { padding:9px 12px; } .photo-box { height:190px; } .photo-label { top:15px; left:12px; padding:6px 12px; font-size:12px; } .after-column .photo-label { right:12px; } .store-row { flex-direction:column; } .big-logo svg { width:90px; height:55px; } .big-logo strong { font-size:55px; } .big-logo b { font-size:18px; } }
+
+/* Project photos: keep the entertainment wall and TV visible */
+.before-column .photo-box img { object-position:center 55%; }
+.after-column .photo-box img { object-position:center center; }
+
+/* Header logo: same artwork as bottom-right logo */
+.site-header .brand-logo {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:0; text-align:center; line-height:.9; letter-spacing:normal; flex-shrink:0;
+}
+.site-header .brand-logo svg { width:66px; height:38px; fill:none; stroke:#10200f; stroke-width:7; stroke-linecap:round; stroke-linejoin:round; }
+.site-header .brand-logo svg .windows { fill:#10200f; stroke:none; }
+.site-header .brand-logo strong { font-size:38px; letter-spacing:-2px; }
+.site-header .brand-logo span { font-size:12px; font-weight:700; letter-spacing:0; }
+@media (max-width:480px) { .site-header .brand-logo svg { width:53px; height:31px; } .site-header .brand-logo strong { font-size:30px; } .site-header .brand-logo span { font-size:10px; } }
+
+
+.site-header .brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-header .brand-name {
+    font-size: 43px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #0e1d0d;
+}
+
+.site-header .roof-icon {
+    width: 43px;
+    height: 43px;
+    fill: none;
+    stroke: #0e1d0d;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.site-header .roof-icon .windows {
+    fill: #0e1d0d;
+    stroke: none;
+}
