@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Meet Mara and discover the personal story behind Build Buddy, an AI-powered DIY home improvement app.">
+
+    <title>About Us | Build Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ABOUT US PAGE STYLES */
+
+        .about-page {
+            background: #faf9f6;
+            color: #172916;
+        }
+
+        .about-hero {
+            background: #f5f2ec;
+            text-align: center;
+            padding: 80px 20px 65px;
+        }
+
+        .about-eyebrow {
+            color: #55704d;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .about-hero h1 {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            font-size: clamp(34px, 4.5vw, 54px);
+            line-height: 1.15;
+        }
+
+        .about-hero p {
+            color: #626b5e;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        /* STORY LAYOUT */
+
+        .about-story {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 80px 35px;
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr)
+                                   minmax(0, 1.15fr);
+            gap: 65px;
+            align-items: start;
+            box-sizing: border-box;
+        }
+
+        .mara-photo {
+            margin: 0;
+            min-width: 0;
+        }
+
+        .mara-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 680px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+
+        .mara-photo figcaption {
+            margin-top: 14px;
+            color: #667060;
+            font-size: 14px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .story-text {
+            min-width: 0;
+        }
+
+        .story-text h2 {
+            font-size: clamp(28px, 3vw, 38px);
+            color: #172916;
+            line-height: 1.25;
+            margin: 0 0 25px;
+        }
+
+        .story-text p,
+        .story-continuation p {
+            font-size: 17px;
+            line-height: 1.85;
+            color: #4f584c;
+            margin: 0 0 23px;
+        }
+
+        .story-text strong,
+        .story-continuation strong {
+            color: #263e24;
+        }
+
+        /* SECOND HALF OF STORY */
+
+        .story-continuation {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 30px 80px;
+            box-sizing: border-box;
+        }
+
+        .story-continuation h2 {
+            color: #172916;
+            font-size: clamp(28px, 3vw, 36px);
+            margin: 0 0 25px;
+        }
+
+        .story-highlight {
+            border-left: 5px solid #55704d;
+            background: #eef0e8;
+            padding: 25px 30px;
+            border-radius: 0 12px 12px 0;
+            margin: 35px 0;
+        }
+
+        .story-highlight p {
+            color: #263e24;
+            font-size: 21px;
+            line-height: 1.6;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* CLOSING SECTION */
+
+        .about-closing {
+            background: #213923;
+            color: white;
+            text-align: center;
+            padding: 75px 25px;
+        }
+
+        .about-closing h2 {
+            color: white;
+            font-size: clamp(30px, 4vw, 44px);
+            margin: 0 0 20px;
+        }
+
+        .about-closing p {
+            color: #e0e9dd;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .about-button {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #f5f2ec;
+            color: #213923;
+            border-radius: 9px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .about-button:hover {
+            background: #dfe7d8;
+        }
+
+        /* RESPONSIVE LAYOUT */
+
+        @media (max-width: 850px) {
+            .about-story {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 50px 25px;
+            }
+
+            .mara-photo {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .mara-photo img {
+                max-height: 600px;
+            }
+
+            .story-continuation {
+                padding: 0 25px 60px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-hero {
+                padding: 55px 20px 45px;
+            }
+
+            .story-text p,
+            .story-continuation p {
+                font-size: 16px;
+            }
+
+            .story-highlight {
+                padding: 20px;
+            }
+
+            .story-highlight p {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="site-shell">
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="brand-area">
+
+            <details class="menu-wrap">
+                <summary aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </summary>
+
+                <div class="menu-panel">
+                    <a href="index.html">Home</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="about.html">About Us</a>
+                    <a href="plans.html">Plans</a>
+                    <a href="get-the-app.html">Get the App</a>
+                </div>
+            </details>
+
+            <a class="brand" href="index.html">
+                <span class="brand-name">Build Buddy</span>
+
+                <svg class="roof-icon"
+                     viewBox="0 0 64 55"
+                     aria-hidden="true">
+                    <path d="M4 28 32 4l28 24M12 24v24h40V24"/>
+                    <path class="windows"
+                          d="M28 27h7v7h-7z
+                             M39 27h7v7h-7z
+                             M28 38h7v7h-7z
+                             M39 38h7v7h-7z"/>
+                </svg>
+            </a>
+
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+
+            <a href="how-it-works.html">
+                How It Works
+            </a>
+
+            <a href="about.html"
+               class="active"
+               aria-current="page">
+                About Us
+            </a>
+
+            <a href="plans.html">Plans</a>
+
+            <a href="get-the-app.html">
+                Get the App
+            </a>
+        </nav>
+
+    </header>
+
+    <main class="about-page">
+
+        <!-- INTRODUCTION -->
+
+        <section class="about-hero">
+
+            <div class="about-eyebrow">
+                Our Story
+            </div>
+
+            <h1>
+                Meet Mara: The Inspiration
+                Behind Build Buddy
+            </h1>
+
+            <p>
+                Every great idea starts with
+                a problem worth solving.
+            </p>
+
+        </section>
+
+        <!-- MARA'S STORY -->
+
+        <section class="about-story">
+
+            <figure class="mara-photo">
+                <img src="images/mara.jpeg"
+                     alt="Mara smiling while exploring a city street">
+
+                <figcaption>
+                    Meet Mara, the inspiration behind Build Buddy.
+                </figcaption>
+            </figure>
+
+            <div class="story-text">
+
+                <h2>Why I Started Build Buddy</h2>
+
+                <p>
+                    For me, the inspiration behind
+                    Build Buddy came from my mom, Mara.
+                </p>
+
+                <p>
+                    Mara is in her early 50s, full of
+                    energy, and always looking for her
+                    next adventure. Whether she's walking
+                    her dog Bruno, spending time with
+                    friends, or exploring somewhere new,
+                    she loves staying active and enjoying
+                    life. She also has an appreciation
+                    for the finer things, especially
+                    when they don't come with an
+                    outrageous price tag.
+                </p>
+
+                <p>
+                    Mara lives in a California home
+                    built in the 1970s. Although the
+                    house underwent a complete renovation
+                    before she moved in, years have
+                    passed, and she's ready for a change.
+                    Nothing major, just a few projects
+                    to modernize her space, refresh
+                    its appearance, and make her home
+                    feel new again.
+                </p>
+
+                <p>
+                    Like many homeowners, Mara started
+                    by reaching out to contractors for
+                    estimates. After receiving countless
+                    quotes for different projects, she
+                    kept running into the same problem:
+                    the prices seemed far too high for
+                    the relatively simple improvements
+                    she wanted to make.
+                </p>
+
+                <p>
+                    But here's the thing about Mara:
+                    <strong>
+                        she isn't afraid to roll up
+                        her sleeves and do the work herself.
+                    </strong>
+                </p>
+
+                <p>
+                    The problem isn't a lack of motivation
+                    or willingness to learn. It's knowing
+                    where to begin. What materials should
+                    she buy? What tools will she need?
+                    How difficult is the project really
+                    going to be? And perhaps most
+                    importantly, what happens if something
+                    goes wrong halfway through?
+                </p>
+
+                <p>
+                    These are the questions that can turn
+                    an exciting home improvement idea
+                    into something intimidating enough
+                    to never get started.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- HOW THE IDEA WAS BORN -->
+
+        <section class="story-continuation">
+
+            <div class="story-highlight">
+                <p>
+                    That's where the idea for
+                    Build Buddy was born.
+                </p>
+            </div>
+
+            <p>
+                I started thinking about how many
+                people are probably in the exact
+                same situation as my mom. Homeowners
+                who have the creativity, motivation,
+                and ability to improve their homes
+                but lack the experience or guidance
+                to confidently take on a project
+                themselves.
+            </p>
+
+            <h2>What If There Were an Easier Way?</h2>
+
+            <p>
+                What if someone like Mara could simply
+                take a picture of her living room,
+                describe what she'd like to change,
+                and instantly see what the finished
+                project could look like?
+            </p>
+
+            <p>
+                Better yet, what if she could receive
+                a personalized, step-by-step guide
+                explaining how to bring that vision
+                to life, complete with a list of
+                materials, necessary tools, estimated
+                costs, and guidance along the way?
+            </p>
+
+            <p>
+                <strong>
+                    That's the vision behind Build Buddy.
+                </strong>
+            </p>
+
+            <p>
+                Build Buddy is designed to make home
+                improvement more approachable by
+                combining AI-powered design visualization
+                with practical DIY project planning.
+                Instead of spending hours searching
+                through tutorials, guessing which
+                materials to purchase, or paying
+                someone else to do a project they
+                might be capable of completing,
+                homeowners can have a resource that
+                helps guide them from their initial
+                idea to the finished result.
+            </p>
+
+            <p>
+                Of course, not every project should
+                be a DIY project. Some jobs require
+                trained professionals, and Build Buddy
+                is intended to help users recognize
+                when professional assistance is the
+                smarter and safer choice.
+            </p>
+
+            <p>
+                My goal isn't to replace contractors
+                or convince everyone to become an
+                expert builder overnight. It's to
+                give everyday homeowners the confidence,
+                knowledge, and resources to take on
+                projects that might otherwise feel
+                out of reach.
+            </p>
+
+            <div class="story-highlight">
+                <p>
+                    People like Mara shouldn't have
+                    to choose between paying a fortune
+                    and giving up on the home they've
+                    always imagined.
+                </p>
+            </div>
+
+            <p>
+                And that's why I'm building Build Buddy.
+            </p>
+
+        </section>
+
+        <!-- CLOSING MESSAGE -->
+
+        <section class="about-closing">
+
+            <h2>Dream it. Plan it. Build it.</h2>
+
+            <p>
+                Build Buddy is being created to help
+                everyday homeowners turn their ideas
+                into achievable projects, one step
+                at a time.
+            </p>
+
+            <a href="how-it-works.html"
+               class="about-button">
+                See How Build Buddy Works
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>
+            © 2026 Build Buddy.
+            Concept website for CIS 300.
+        </p>
+    </footer>
+
+</div>
+
+</body>
+</html>

@@ -111,3 +111,106 @@ footer p { margin:0; }
     fill: #0e1d0d;
     stroke: none;
 }
+
+/*HWP*/
+
+.how-hero {
+    text-align: center;
+    padding: 65px 20px 45px;
+    background: #f5f2ec;
+}
+
+.how-hero h1 {
+    font-size: 44px;
+    color: #172916;
+    margin-bottom: 18px;
+}
+
+.how-hero p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 50px 6%;
+    background: #faf9f6;
+}
+
+.step-card {
+    background: white;
+    border-radius: 15px;
+    padding: 35px 28px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    border: 1px solid #e5e1d9;
+}
+
+.step-number {
+    font-size: 34px;
+    font-weight: 800;
+    color: #344b2d;
+    margin-bottom: 18px;
+}
+
+.step-card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #172916;
+}
+
+.step-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.how-bottom {
+    text-align: center;
+    padding: 65px 20px;
+    background: #f5f2ec;
+}
+
+.how-bottom h2 {
+    font-size: 32px;
+    color: #172916;
+}
+
+.how-bottom p {
+    margin: 15px auto 30px;
+    color: #555;
+}
+
+.how-button {
+    display: inline-block;
+    background: #344b2d;
+    color: white;
+    padding: 15px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.how-button:hover {
+    background: #243820;
+}
+
+@media (max-width: 900px) {
+    .how-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .how-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .how-hero h1 {
+        font-size: 32px;
+    }
+}

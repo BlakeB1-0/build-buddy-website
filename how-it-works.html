@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Learn how Build Buddy helps homeowners visualize and plan DIY projects.">
+
+    <title>How It Works | Build Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Styles for the How It Works page only */
+
+        .how-intro {
+            text-align: center;
+            padding: 90px 20px 50px;
+            background: #f5f2ec;
+        }
+
+        .how-intro h1 {
+            font-size: clamp(32px, 4vw, 48px);
+            color: #172916;
+            margin: 0 0 20px;
+        }
+
+        .how-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Three-column card layout */
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 55px 30px;
+            box-sizing: border-box;
+        }
+
+        /* Flip card container */
+
+        .flip-card {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            height: 310px;
+            padding: 0;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            perspective: 1200px;
+            text-align: left;
+            font-family: inherit;
+            color: inherit;
+            box-sizing: border-box;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s ease;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Both sides of each card */
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 25px;
+            box-sizing: border-box;
+            border: 1px solid #e5e1d9;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            overflow: hidden;
+        }
+
+        .flip-card-front {
+            background: #fff;
+        }
+
+        .flip-card-back {
+            background: #f0f1eb;
+            transform: rotateY(180deg);
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Card text */
+
+        .flip-card .step-number {
+            display: block;
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #344b2d;
+            margin: 0 0 18px;
+        }
+
+        .flip-card .card-heading {
+            display: block;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #172916;
+            margin: 0 0 14px;
+        }
+
+        .flip-card .card-description {
+            display: block;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .flip-card .flip-hint {
+            display: block;
+            margin-top: auto;
+            padding-top: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #344b2d;
+        }
+
+        /* Images stay inside their cards */
+
+        .flip-card-back img {
+            display: block;
+            width: 100%;
+            height: 190px;
+            max-width: 100%;
+            min-height: 0;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .flip-card .prompt-example {
+            display: block;
+            font-size: 15px;
+            line-height: 1.6;
+            font-style: italic;
+            color: #344b2d;
+            overflow-y: auto;
+        }
+
+        .flip-card:focus-visible {
+            outline: 3px solid #344b2d;
+            outline-offset: 4px;
+            border-radius: 16px;
+        }
+
+        /* Bottom section */
+
+        .how-bottom {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f5f2ec;
+        }
+
+        .how-bottom h2 {
+            color: #172916;
+            font-size: 30px;
+            margin: 0 0 15px;
+        }
+
+        .how-bottom p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .how-button {
+            display: inline-block;
+            background: #344b2d;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .how-button:hover {
+            background: #172916;
+        }
+
+        /* Tablet layout */
+
+        @media (max-width: 950px) {
+            .how-steps {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* Mobile layout */
+
+        @media (max-width: 600px) {
+            .how-intro {
+                padding: 55px 20px 35px;
+            }
+
+            .how-steps {
+                grid-template-columns: 1fr;
+                padding: 30px 18px;
+                gap: 20px;
+            }
+
+            .flip-card {
+                height: 320px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .flip-card-inner {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="site-shell">
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="brand-area">
+
+            <details class="menu-wrap">
+                <summary aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </summary>
+
+                <div class="menu-panel">
+                    <a href="index.html">Home</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="about.html">Examples</a>
+                    <a href="plans.html">Plans</a>
+                    <a href="get-the-app.html">Get the App</a>
+                </div>
+            </details>
+
+            <a class="brand" href="index.html">
+
+                <span class="brand-name">Build Buddy</span>
+
+                <svg class="roof-icon"
+                     viewBox="0 0 64 55"
+                     aria-hidden="true">
+
+                    <path d="M4 28 32 4l28 24M12 24v24h40V24"/>
+
+                    <path
+                        d="M28 27h7v7h-7z
+                           M39 27h7v7h-7z
+                           M28 38h7v7h-7z
+                           M39 38h7v7h-7z"
+                        class="windows"/>
+                </svg>
+
+            </a>
+
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav" aria-label="Main navigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="how-it-works.html"
+               class="active"
+               aria-current="page">
+                How It Works
+            </a>
+
+            <a href="about.html">Examples</a>
+
+            <a href="plans.html">Plans</a>
+
+            <a href="get-the-app.html">Get the App</a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+
+        <section class="how-intro">
+
+            <h1>How Build Buddy Works</h1>
+
+            <p>
+                From an idea to a finished project,
+                Build Buddy makes DIY home improvement
+                easier with AI-powered designs,
+                personalized instructions, and
+                materials lists.
+            </p>
+
+        </section>
+
+        <!-- INTERACTIVE FLIP CARDS -->
+
+        <section class="how-steps" aria-label="Five steps">
+
+            <!-- CARD 01 -->
+
+            <button class="flip-card"
+                    type="button"
+                    aria-pressed="false">
+
+                <span class="flip-card-inner">
+
+                    <span class="flip-card-front">
+
+                        <span class="step-number">01</span>
+
+                        <span class="card-heading">
+                            Upload a Photo
+                        </span>
+
+                        <span class="card-description">
+                            Take a picture of the space
+                            you want to improve. Upload
+                            it to Build Buddy to get started.
+                        </span>
+
+                        <span class="flip-hint">
+                            Click to see example ↻
+                        </span>
+
+                    </span>
+
+                    <span class="flip-card-back">
+
+                        <span class="card-heading">
+                            Your Starting Space
+                        </span>
+
+                        <img src="images/before.jpg"
+                             alt="Living room before renovation">
+
+                        <span class="flip-hint">
+                            Click to flip back ↻
+                        </span>
+
+                    </span>
+
+                </span>
+
+            </button>
+
+            <!-- CARD 02 -->
+
+            <button class="flip-card"
+                    type="button"
+                    aria-pressed="false">
+
+                <span class="flip-card-inner">
+
+                    <span class="flip-card-front">
+
+                        <span class="step-number">02</span>
+
+                        <span class="card-heading">
+                            Describe Your Project
+                        </span>
+
+                        <span class="card-description">
+                            Tell Build Buddy what you
+                            want to create. Describe your
+                            style, budget, and project goals.
+                        </span>
+
+                        <span class="flip-hint">
+                            Click to see example ↻
+                        </span>
+
+                    </span>
+
+                    <span class="flip-card-back">
+
+                        <span class="card-heading">
+                            Example Project Prompt
+                        </span>
+
+                        <span class="prompt-example">
+                            "Create a modern built-in
+                            entertainment center with
+                            a mounted TV, electric fireplace,
+                            LED-lit shelves, concealed
+                            storage, and neutral finishes.
+                            Include DIY plans, materials,
+                            and estimated costs."
+                        </span>
+
+                        <span class="flip-hint">
+                            Click to flip back ↻
+                        </span>
+
+                    </span>
+
+                </span>
+
+            </button>
+
+            <!-- CARD 03 -->
+
+            <button class="flip-card"
+                    type="button"
+                    aria-pressed="false">
+
+                <span class="flip-card-inner">
+
+                    <span class="flip-card-front">
+
+                        <span class="step-number">03</span>
+
+                        <span class="card-heading">
+                            Generate an AI Rendering
+                        </span>
+
+                        <span class="card-description">
+                            Build Buddy creates a realistic
+                            visualization of your project
+                            before construction begins.
+                        </span>
+
+                        <span class="flip-hint">
+                            Click to see example ↻
+                        </span>
+
+                    </span>
+
+                    <span class="flip-card-back">
+
+                        <span class="card-heading">
+                            AI Project Rendering
+                        </span>
+
+                        <img src="images/project-render.png"
+                             alt="Finished entertainment center rendering">
+
+                        <span class="flip-hint">
+                            Click to flip back ↻
+                        </span>
+
+                    </span>
+
+                </span>
+
+            </button>
+
+            <!-- CARD 04 -->
+
+            <button class="flip-card"
+                    type="button"
+                    aria-pressed="false">
+
+                <span class="flip-card-inner">
+
+                    <span class="flip-card-front">
+
+                        <span class="step-number">04</span>
+
+                        <span class="card-heading">
+                            Get Step-by-Step Instructions
+                        </span>
+
+                        <span class="card-description">
+                            Receive detailed construction
+                            plans and instructions that
+                            break your project into
+                            manageable steps.
+                        </span>
+
+                        <span class="flip-hint">
+                            Click to see example ↻
+                        </span>
+
+                    </span>
+
+                    <span class="flip-card-back">
+
+                        <span class="card-heading">
+                            Example Construction Plans
+                        </span>
+
+                        <img src="images/project-plans.png"
+                             alt="Entertainment center construction plans">
+
+                        <span class="flip-hint">
+                            Click to flip back ↻
+                        </span>
+
+                    </span>
+
+                </span>
+
+            </button>
+
+            <!-- CARD 05 -->
+
+            <button class="flip-card"
+                    type="button"
+                    aria-pressed="false">
+
+                <span class="flip-card-inner">
+
+                    <span class="flip-card-front">
+
+                        <span class="step-number">05</span>
+
+                        <span class="card-heading">
+                            Find Materials & Tools
+                        </span>
+
+                        <span class="card-description">
+                            Get a personalized materials
+                            list with estimated costs,
+                            quantities, and shopping options.
+                        </span>
+
+                        <span class="flip-hint">
+                            Click to see example ↻
+                        </span>
+
+                    </span>
+
+                    <span class="flip-card-back">
+
+                        <span class="card-heading">
+                            Materials & Estimated Costs
+                        </span>
+
+                        <img src="images/materials-cost.png"
+                             alt="Materials list with estimated costs">
+
+                        <span class="flip-hint">
+                            Click to flip back ↻
+                        </span>
+
+                    </span>
+
+                </span>
+
+            </button>
+
+        </section>
+
+        <!-- BOTTOM SECTION -->
+
+        <section class="how-bottom">
+
+            <h2>Dream it. Plan it. Build it.</h2>
+
+            <p>
+                Build Buddy helps turn your home improvement
+                ideas into achievable projects.
+            </p>
+
+            <a href="about.html" class="how-button">
+                View Project Examples
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>
+            © 2026 Build Buddy.
+            Concept website for CIS 300.
+        </p>
+    </footer>
+
+</div>
+
+<!-- FLIP CARD JAVASCRIPT -->
+
+<script>
+    document.querySelectorAll(".flip-card").forEach(card => {
+
+        card.addEventListener("click", () => {
+
+            const isFlipped = card.classList.toggle("flipped");
+
+            card.setAttribute(
+                "aria-pressed",
+                String(isFlipped)
+            );
+
+        });
+
+    });
+</script>
+
+</body>
+</html>
